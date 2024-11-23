@@ -1,9 +1,23 @@
 #include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
 
-using namespace std;
+void f1() {
 
-int main()
-{
-    cout << "Hello world!" << endl;
-    return 0;
+}
+
+void f2() {
+
+}
+
+void f3() {
+
+}
+
+int main() {
+
+    f1();
+    f2();
+    f3();
 }
