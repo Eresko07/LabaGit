@@ -7,8 +7,10 @@ void f1() {
 
 }
 
-void f2() {
-
+void f2(const vector<string>& strings) {
+    for (const auto& str : strings) {
+        cout << str << endl;
+    }
 }
 
 void f3() {
