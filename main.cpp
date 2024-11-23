@@ -3,8 +3,20 @@
 #include <string>
 #include <fstream>
 
-void f1() {
+using namespace std;
+void f1(const string& filename, vector<string>& strings) {
+    ifstream inputFile(filename);
+    if (!inputFile.is_open()){
+        cerr << "Error " << filename << endl;
+        return;
+    }
 
+    string line;
+    while (getline(inputFile, line)) {
+        strings.push_back(line);
+    }
+
+    inputFile.close();
 }
 
 void f2(const vector<string>& strings) {
@@ -28,8 +40,9 @@ void f3(const string& filename, const vector<string>& strings) {
 }
 
 int main() {
-
-    f1();
-    f2();
-    f3();
+    vector<string> strings;
+    f1("input.txt", strings);
+    f2(strings);
+    f3("output.txt", strings);
+    return 0;
 }
