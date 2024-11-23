@@ -13,8 +13,18 @@ void f2(const vector<string>& strings) {
     }
 }
 
-void f3() {
+void f3(const string& filename, const vector<string>& strings) {
+    ofstream outputFile(filename);
+    if (!outputFile.is_open()) {
+        cerr << "Error " << filename << endl;
+        return;
+    }
 
+    for (const auto& str : strings) {
+        outputFile << str << endl;
+    }
+
+    outputFile.close();
 }
 
 int main() {
