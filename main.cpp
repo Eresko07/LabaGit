@@ -28,8 +28,9 @@ void f3() {
 }
 
 int main() {
-
-    f1();
-    f2();
-    f3();
+    vector<string> strings;
+    f1("input.txt", strings);
+    f2(strings);
+    f3("output.txt", strings);
+    return 0;
 }
